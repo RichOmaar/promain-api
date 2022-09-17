@@ -1,45 +1,51 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:8889
--- Tiempo de generación: 15-09-2022 a las 00:45:49
--- Versión del servidor: 5.7.34
--- Versión de PHP: 8.0.8
+-- Host: localhost:8889
+-- Generation Time: Sep 16, 2022 at 03:26 PM
+-- Server version: 5.7.30
+-- PHP Version: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
--- Base de datos: `promain`
+-- Database: `promain`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `contact_form`
+-- Table structure for table `certifications`
+--
+
+CREATE TABLE `certifications` (
+  `id_certification` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `url` varchar(550) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact_form`
 --
 
 CREATE TABLE `contact_form` (
   `id_contactForm` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `phone` int(12) NOT NULL,
+  `phone` varchar(12) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `message` text NOT NULL,
-  `seen` tinyint(1) NOT NULL,
+  `seen` tinyint(1) NOT NULL DEFAULT '0',
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `images`
+-- Table structure for table `images`
 --
 
 CREATE TABLE `images` (
@@ -51,7 +57,7 @@ CREATE TABLE `images` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
@@ -61,62 +67,125 @@ CREATE TABLE `products` (
   `mainDescripton` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
 --
--- Índices para tablas volcadas
+-- Table structure for table `products_bullets`
+--
+
+CREATE TABLE `products_bullets` (
+  `id_bullet` int(11) NOT NULL,
+  `id_product` int(11) DEFAULT NULL,
+  `bulletText` varchar(550) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_certification`
+--
+
+CREATE TABLE `product_certification` (
+  `id_product` int(11) DEFAULT NULL,
+  `id_certification` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `contact_form`
+-- Indexes for table `certifications`
+--
+ALTER TABLE `certifications`
+  ADD PRIMARY KEY (`id_certification`);
+
+--
+-- Indexes for table `contact_form`
 --
 ALTER TABLE `contact_form`
   ADD PRIMARY KEY (`id_contactForm`);
 
 --
--- Indices de la tabla `images`
+-- Indexes for table `images`
 --
 ALTER TABLE `images`
   ADD PRIMARY KEY (`id_image`),
   ADD KEY `id_product` (`id_product`);
 
 --
--- Indices de la tabla `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id_product`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- Indexes for table `products_bullets`
+--
+ALTER TABLE `products_bullets`
+  ADD PRIMARY KEY (`id_bullet`),
+  ADD KEY `id_product` (`id_product`);
+
+--
+-- Indexes for table `product_certification`
+--
+ALTER TABLE `product_certification`
+  ADD KEY `id_product` (`id_product`),
+  ADD KEY `id_certification` (`id_certification`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `contact_form`
+-- AUTO_INCREMENT for table `certifications`
+--
+ALTER TABLE `certifications`
+  MODIFY `id_certification` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `contact_form`
 --
 ALTER TABLE `contact_form`
   MODIFY `id_contactForm` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `images`
+-- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
   MODIFY `id_image` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Restricciones para tablas volcadas
+-- AUTO_INCREMENT for table `products_bullets`
+--
+ALTER TABLE `products_bullets`
+  MODIFY `id_bullet` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `images`
+-- Constraints for table `images`
 --
 ALTER TABLE `images`
   ADD CONSTRAINT `images_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `products` (`id_product`);
-COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+--
+-- Constraints for table `products_bullets`
+--
+ALTER TABLE `products_bullets`
+  ADD CONSTRAINT `products_bullets_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `products` (`id_product`);
+
+--
+-- Constraints for table `product_certification`
+--
+ALTER TABLE `product_certification`
+  ADD CONSTRAINT `product_certification_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `products` (`id_product`),
+  ADD CONSTRAINT `product_certification_ibfk_2` FOREIGN KEY (`id_certification`) REFERENCES `certifications` (`id_certification`);
