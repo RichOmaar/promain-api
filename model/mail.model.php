@@ -9,7 +9,7 @@ class Mailing
     {
 
         $mailTo = 'email.test@promainindustrial.com.mx';
-        $subject = 'Test';
+        $subject = 'Información PROMAIN';
 
         $body =  'Nuevo correo de ' . $name . ' | Correo: ' . $email . ' | Teléfono: ' . $phone . ' | Mensaje: ' . $message . '.';
 
