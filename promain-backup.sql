@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Sep 17, 2022 at 07:18 AM
+-- Generation Time: Sep 26, 2022 at 05:30 PM
 -- Server version: 5.7.30
 -- PHP Version: 7.4.9
 
@@ -34,6 +34,28 @@ INSERT INTO `certifications` (`id_certification`, `name`) VALUES
 (2, 'GreenSeal'),
 (3, 'Kosher'),
 (4, 'Recyclable');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `clients`
+--
+
+CREATE TABLE `clients` (
+  `id_client` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` varchar(550) NOT NULL,
+  `logo_url` varchar(550) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `clients`
+--
+
+INSERT INTO `clients` (`id_client`, `name`, `description`, `logo_url`) VALUES
+(1, 'Hard Rock Hotel', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'assets/img/clients/hardRock.png'),
+(2, 'Marriot', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'assets/img/clients/marriot.png'),
+(3, 'presidente', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'assets/img/clients/presidente.png');
 
 -- --------------------------------------------------------
 
@@ -167,6 +189,12 @@ ALTER TABLE `certifications`
   ADD PRIMARY KEY (`id_certification`);
 
 --
+-- Indexes for table `clients`
+--
+ALTER TABLE `clients`
+  ADD PRIMARY KEY (`id_client`);
+
+--
 -- Indexes for table `contact_form`
 --
 ALTER TABLE `contact_form`
@@ -210,6 +238,12 @@ ALTER TABLE `certifications`
   MODIFY `id_certification` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `clients`
+--
+ALTER TABLE `clients`
+  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `contact_form`
 --
 ALTER TABLE `contact_form`
@@ -231,7 +265,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `products_bullets`
 --
 ALTER TABLE `products_bullets`
-  MODIFY `id_bullet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_bullet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
