@@ -68,7 +68,7 @@ class InfoProduct
     {
         $db = new Connection();
         $conn = $db->get_connection();
-        $sql = "SELECT products.id_product, products.productName, products.url as link, images.id_image, images.url FROM products INNER JOIN images on products.id_product = images.id_product";
+        $sql = "SELECT products.id_product, products.productName, products.url AS link, images.id_image, images.url FROM products INNER JOIN images ON products.id_product = images.id_product ORDER BY products.productName ASC";
 
         $stmt = $conn->prepare($sql);
 
