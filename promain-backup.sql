@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Sep 26, 2022 at 05:30 PM
+-- Generation Time: Dec 06, 2022 at 03:19 AM
 -- Server version: 5.7.30
 -- PHP Version: 7.4.9
 
@@ -101,7 +101,80 @@ INSERT INTO `images` (`id_image`, `url`, `id_product`) VALUES
 (1, 'assets/img/products/ps-enviro-care-liqui.png', 1),
 (2, 'assets/img/products/ps-enviro-care.png', 3),
 (3, 'assets/img/products/ps-enviro-care-neutral.png', 4),
-(4, 'assets/img/products/ps-enviro-care-low.png', 5);
+(4, 'assets/img/products/ps-enviro-care-low.png', 5),
+(5, 'assets/img/products/ps-dfe-sabre.png', 6),
+(6, 'assets/img/products/ps-dfe-bloc.png', 7),
+(7, 'assets/img/products/ps-enviro-care-washroom-cleaner.png', 8);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `industries`
+--
+
+CREATE TABLE `industries` (
+  `id_industry` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `name_url` varchar(255) NOT NULL,
+  `description` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `industries`
+--
+
+INSERT INTO `industries` (`id_industry`, `name`, `name_url`, `description`) VALUES
+(1, 'De la transformación', 'de-la-transformacion', NULL),
+(2, 'Alimenticia', 'alimenticia', NULL),
+(3, 'Petroquímica', 'petroquimica', NULL),
+(4, 'Institucional', 'institucional', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `industries_products`
+--
+
+CREATE TABLE `industries_products` (
+  `id_industryProduct` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `id_industry` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `industries_products`
+--
+
+INSERT INTO `industries_products` (`id_industryProduct`, `name`, `id_industry`) VALUES
+(1, 'Desengrasantes', 1),
+(2, 'Desincrustantes', 1),
+(3, 'Limpiadores dialécticos', 1),
+(4, 'Emulsiones', 1),
+(5, 'Disolventes', 1),
+(6, 'Tratamiento de aguas residuales', 1),
+(7, 'Tratamiento de torres de enfriamiento\r\n', 1),
+(8, 'Tratamiento de chillers', 1),
+(9, 'Limpiadores para equipos de proceso\r\n(Tanques, marmitas, llenadoras, tuberías y transportadores, hornos, freidoras, cámaras de ahumado, mezcladores, amasadoras, cuartos de refrigeración, congeladores)', 2),
+(10, 'Desincrustantes para equipo y tuberías', 2),
+(11, 'Sanitizantes', 2),
+(12, 'Tratamiento de aguas residuales', 2),
+(13, 'Tratamiento de torres de enfriamiento', 2),
+(14, 'Tratamiento de chillers', 2),
+(15, 'Desengrasantes ecológicos\r\n', 2),
+(16, 'Desengrasantes', 3),
+(17, 'Biorremediación del agua', 3),
+(18, 'Tratamiento de aguas residuales', 3),
+(19, 'Buques tanques', 3),
+(20, 'Limpieza de barcos', 3),
+(21, 'Desengrasantes', 4),
+(22, 'Desincrustantes', 4),
+(23, 'Desinfectantes', 4),
+(24, 'Tratamiento de pisos', 4),
+(25, 'Control de mal olor', 4),
+(26, 'Tratamiento de aguas residuales: trampas de grasa, cárcamos, PTRA, drenajes', 4),
+(27, 'Aromatización de espacios grandes\r\n', 4),
+(28, 'Sistema de goteo', 4),
+(29, 'Tratamiento para alfombras y tapetes', 4);
 
 -- --------------------------------------------------------
 
@@ -125,7 +198,10 @@ INSERT INTO `products` (`id_product`, `productName`, `leyend`, `mainDescripton`,
 (1, 'Enviro Care® LIQUIBAC', 'DIGESTOR BIOLÓGICO', 'Suspensión de microorganismos aerobios, facultativos y anaerobios no patógenos que producen enzimas que licuan y digieren grasas y aceites de origen animal o vegetal, proteínas, carbohidratos y residuos orgánicos', 'enviro-care-liquibac'),
 (3, 'Enviro Care Tough Job Cleaner', 'USO INDUSTRIAL EXCLUSIVO', 'Limpiador y desengrasante de uso rudo para suciedades difíciles mediante trapeador, mopa o máquina barredora automática. ', 'enviro-care-tough-job-cleaner'),
 (4, 'Enviro Care® Neutral Disinfectant', 'USO INDUSTRIAL EXCLUSIVO', 'Desinfectante de superficies duras tipo hospital, limpiador y desodorante. Mata el COVID-19 H1N1, el VIH (SIDA), el VRE, el CA-MRSA y más.', 'enviro-care-neutral-desinfectant'),
-(5, 'Enviro Care Low Foam All Purpose Cleaner', 'USO INDUSTRIAL EXCLUSIVO', 'Limpiador multiuso uso de pH neutro y baja espuma. Ideal para remover suciedad de todo tipo de superficies.', 'enviro-care-low-foam-all-purpose-cleaner');
+(5, 'Enviro Care Low Foam All Purpose Cleaner', 'USO INDUSTRIAL EXCLUSIVO', 'Limpiador multiuso uso de pH neutro y baja espuma. Ideal para remover suciedad de todo tipo de superficies.', 'enviro-care-low-foam-all-purpose-cleaner'),
+(6, 'DfE Sabre', '', 'Limpiador biocatalítico para trabajos pesados que disuelve grasas y aceites.', 'dfe-sabre'),
+(7, 'DfE B.L.O.C.', ' ', 'Líquido biológico rápido y efectivo neutralizador de malos olores.', 'dfe-bloc'),
+(8, 'Enviro Care Washroom Cleaner', '', 'Limpiador de baños, canceles, lavabos, loseta, mármol. No necesita enjuague.', 'enviro-care-washroom-cleaner');
 
 -- --------------------------------------------------------
 
@@ -149,7 +225,15 @@ INSERT INTO `products_bullets` (`id_bullet`, `id_product`, `bulletText`) VALUES
 (3, 1, 'Controla el problema de mal olor'),
 (4, 3, 'Desinfectante aprobado por la guía de patógenos virales emergentes de la EPA'),
 (5, 3, 'Limpia, desinfecta y elimina mal olor en un solo paso'),
-(6, 4, 'Remueve malos olores');
+(6, 4, 'Remueve malos olores'),
+(7, 6, 'Desengrasante enzimático de potencia industrial'),
+(8, 6, 'Disuelve las grasas y aceites'),
+(9, 6, 'Cumple con la norma ASTM D4488 en cuanto a resistencia de resbalones'),
+(10, 7, 'Degrada y elimina la causa del mal olor'),
+(11, 7, 'A través de actividad vio-enzemática digiere suciedad orgánica'),
+(12, 7, 'Biodegradable'),
+(13, 8, 'No tóxico'),
+(14, 8, 'Biodegradable');
 
 -- --------------------------------------------------------
 
@@ -176,7 +260,57 @@ INSERT INTO `product_certification` (`id_product`, `id_certification`) VALUES
 (4, 1),
 (5, 2),
 (5, 1),
-(5, 3);
+(5, 3),
+(6, 1),
+(6, 3),
+(7, 1),
+(7, 3),
+(8, 2),
+(8, 1),
+(8, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subindustries`
+--
+
+CREATE TABLE `subindustries` (
+  `id_subindustry` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `id_industry` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `subindustries`
+--
+
+INSERT INTO `subindustries` (`id_subindustry`, `name`, `image`, `id_industry`) VALUES
+(1, 'Metalmecánica', 'https://via.placeholder.com/360/', 1),
+(2, 'Automotriz', 'https://via.placeholder.com/360/', 1),
+(3, 'Plástico - soplado', 'https://via.placeholder.com/360/', 1),
+(4, 'Inyección', 'https://via.placeholder.com/360/', 1),
+(5, 'Maquiladoras', 'https://via.placeholder.com/360/', 1),
+(6, 'Cárnica', 'https://via.placeholder.com/360/', 2),
+(7, 'Láctea', 'https://via.placeholder.com/360/', 2),
+(8, 'Bebidas', 'https://via.placeholder.com/360/', 2),
+(9, 'Panificación', 'https://via.placeholder.com/360/', 2),
+(10, 'Frutas y verduras', 'https://via.placeholder.com/360/', 2),
+(11, 'Cervecera', 'https://via.placeholder.com/360/', 2),
+(12, 'Alimentos para mascotas', 'https://via.placeholder.com/360/', 2),
+(13, 'Refinerías', 'https://via.placeholder.com/360/', 3),
+(14, 'Pozos en tierra', 'https://via.placeholder.com/360/', 3),
+(15, 'Plataformas offshore ', 'https://via.placeholder.com/360/', 3),
+(16, 'Tanques de almacenamiento', 'https://via.placeholder.com/360/', 3),
+(17, 'Separadores', 'https://via.placeholder.com/360/', 3),
+(18, 'Hoteles', 'https://via.placeholder.com/360/', 4),
+(19, 'Restaurantes', 'https://via.placeholder.com/360/', 4),
+(20, 'Hospitales', 'https://via.placeholder.com/360/', 4),
+(21, 'Clínicas Dentales', 'https://via.placeholder.com/360/', 4),
+(22, 'Clínicas Veterinarias', 'https://via.placeholder.com/360/', 4),
+(23, 'Escuelas', 'https://via.placeholder.com/360/', 4),
+(24, 'Oficinas', 'https://via.placeholder.com/360/', 4);
 
 --
 -- Indexes for dumped tables
@@ -208,6 +342,19 @@ ALTER TABLE `images`
   ADD KEY `id_product` (`id_product`);
 
 --
+-- Indexes for table `industries`
+--
+ALTER TABLE `industries`
+  ADD PRIMARY KEY (`id_industry`);
+
+--
+-- Indexes for table `industries_products`
+--
+ALTER TABLE `industries_products`
+  ADD PRIMARY KEY (`id_industryProduct`),
+  ADD KEY `id_industry` (`id_industry`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -226,6 +373,13 @@ ALTER TABLE `products_bullets`
 ALTER TABLE `product_certification`
   ADD KEY `id_product` (`id_product`),
   ADD KEY `id_certification` (`id_certification`);
+
+--
+-- Indexes for table `subindustries`
+--
+ALTER TABLE `subindustries`
+  ADD PRIMARY KEY (`id_subindustry`),
+  ADD KEY `id_industry` (`id_industry`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -253,19 +407,37 @@ ALTER TABLE `contact_form`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id_image` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_image` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `industries`
+--
+ALTER TABLE `industries`
+  MODIFY `id_industry` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `industries_products`
+--
+ALTER TABLE `industries_products`
+  MODIFY `id_industryProduct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `products_bullets`
 --
 ALTER TABLE `products_bullets`
-  MODIFY `id_bullet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_bullet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `subindustries`
+--
+ALTER TABLE `subindustries`
+  MODIFY `id_subindustry` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Constraints for dumped tables
@@ -276,6 +448,12 @@ ALTER TABLE `products_bullets`
 --
 ALTER TABLE `images`
   ADD CONSTRAINT `images_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `products` (`id_product`);
+
+--
+-- Constraints for table `industries_products`
+--
+ALTER TABLE `industries_products`
+  ADD CONSTRAINT `industries_products_ibfk_1` FOREIGN KEY (`id_industry`) REFERENCES `industries` (`id_industry`);
 
 --
 -- Constraints for table `products_bullets`
@@ -289,3 +467,9 @@ ALTER TABLE `products_bullets`
 ALTER TABLE `product_certification`
   ADD CONSTRAINT `product_certification_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `products` (`id_product`),
   ADD CONSTRAINT `product_certification_ibfk_2` FOREIGN KEY (`id_certification`) REFERENCES `certifications` (`id_certification`);
+
+--
+-- Constraints for table `subindustries`
+--
+ALTER TABLE `subindustries`
+  ADD CONSTRAINT `subindustries_ibfk_1` FOREIGN KEY (`id_industry`) REFERENCES `industries` (`id_industry`);
