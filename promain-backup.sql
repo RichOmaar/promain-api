@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Dec 06, 2022 at 03:19 AM
+-- Generation Time: Jan 07, 2023 at 07:08 PM
 -- Server version: 5.7.30
 -- PHP Version: 7.4.9
 
@@ -156,7 +156,7 @@ INSERT INTO `industries_products` (`id_industryProduct`, `name`, `id_industry`) 
 (8, 'Tratamiento de chillers', 1),
 (9, 'Limpiadores para equipos de proceso\r\n(Tanques, marmitas, llenadoras, tuberías y transportadores, hornos, freidoras, cámaras de ahumado, mezcladores, amasadoras, cuartos de refrigeración, congeladores)', 2),
 (10, 'Desincrustantes para equipo y tuberías', 2),
-(11, 'Sanitizantes', 2),
+(11, 'Desinfectantes', 2),
 (12, 'Tratamiento de aguas residuales', 2),
 (13, 'Tratamiento de torres de enfriamiento', 2),
 (14, 'Tratamiento de chillers', 2),
@@ -198,7 +198,7 @@ INSERT INTO `products` (`id_product`, `productName`, `leyend`, `mainDescripton`,
 (1, 'Enviro Care® LIQUIBAC', 'DIGESTOR BIOLÓGICO', 'Suspensión de microorganismos aerobios, facultativos y anaerobios no patógenos que producen enzimas que licuan y digieren grasas y aceites de origen animal o vegetal, proteínas, carbohidratos y residuos orgánicos', 'enviro-care-liquibac'),
 (3, 'Enviro Care Tough Job Cleaner', 'USO INDUSTRIAL EXCLUSIVO', 'Limpiador y desengrasante de uso rudo para suciedades difíciles mediante trapeador, mopa o máquina barredora automática. ', 'enviro-care-tough-job-cleaner'),
 (4, 'Enviro Care® Neutral Disinfectant', 'USO INDUSTRIAL EXCLUSIVO', 'Desinfectante de superficies duras tipo hospital, limpiador y desodorante. Mata el COVID-19 H1N1, el VIH (SIDA), el VRE, el CA-MRSA y más.', 'enviro-care-neutral-desinfectant'),
-(5, 'Enviro Care Low Foam All Purpose Cleaner', 'USO INDUSTRIAL EXCLUSIVO', 'Limpiador multiuso uso de pH neutro y baja espuma. Ideal para remover suciedad de todo tipo de superficies.', 'enviro-care-low-foam-all-purpose-cleaner'),
+(5, 'Enviro Care Low Foam All Purpose Cleaner', '', 'Limpiador multiuso uso de pH neutro y baja espuma. Ideal para remover suciedad de todo tipo de superficies.', 'enviro-care-low-foam-all-purpose-cleaner'),
 (6, 'DfE Sabre', '', 'Limpiador biocatalítico para trabajos pesados que disuelve grasas y aceites.', 'dfe-sabre'),
 (7, 'DfE B.L.O.C.', ' ', 'Líquido biológico rápido y efectivo neutralizador de malos olores.', 'dfe-bloc'),
 (8, 'Enviro Care Washroom Cleaner', '', 'Limpiador de baños, canceles, lavabos, loseta, mármol. No necesita enjuague.', 'enviro-care-washroom-cleaner');
@@ -287,30 +287,30 @@ CREATE TABLE `subindustries` (
 --
 
 INSERT INTO `subindustries` (`id_subindustry`, `name`, `image`, `id_industry`) VALUES
-(1, 'Metalmecánica', 'https://via.placeholder.com/360/', 1),
-(2, 'Automotriz', 'https://via.placeholder.com/360/', 1),
-(3, 'Plástico - soplado', 'https://via.placeholder.com/360/', 1),
-(4, 'Inyección', 'https://via.placeholder.com/360/', 1),
-(5, 'Maquiladoras', 'https://via.placeholder.com/360/', 1),
-(6, 'Cárnica', 'https://via.placeholder.com/360/', 2),
-(7, 'Láctea', 'https://via.placeholder.com/360/', 2),
-(8, 'Bebidas', 'https://via.placeholder.com/360/', 2),
-(9, 'Panificación', 'https://via.placeholder.com/360/', 2),
-(10, 'Frutas y verduras', 'https://via.placeholder.com/360/', 2),
-(11, 'Cervecera', 'https://via.placeholder.com/360/', 2),
-(12, 'Alimentos para mascotas', 'https://via.placeholder.com/360/', 2),
-(13, 'Refinerías', 'https://via.placeholder.com/360/', 3),
-(14, 'Pozos en tierra', 'https://via.placeholder.com/360/', 3),
-(15, 'Plataformas offshore ', 'https://via.placeholder.com/360/', 3),
-(16, 'Tanques de almacenamiento', 'https://via.placeholder.com/360/', 3),
-(17, 'Separadores', 'https://via.placeholder.com/360/', 3),
-(18, 'Hoteles', 'https://via.placeholder.com/360/', 4),
-(19, 'Restaurantes', 'https://via.placeholder.com/360/', 4),
-(20, 'Hospitales', 'https://via.placeholder.com/360/', 4),
-(21, 'Clínicas Dentales', 'https://via.placeholder.com/360/', 4),
-(22, 'Clínicas Veterinarias', 'https://via.placeholder.com/360/', 4),
-(23, 'Escuelas', 'https://via.placeholder.com/360/', 4),
-(24, 'Oficinas', 'https://via.placeholder.com/360/', 4);
+(1, 'Metalmecánica', 'assets/img/industries/hotel.png', 1),
+(2, 'Automotriz', 'assets/img/industries/hotel.png', 1),
+(3, 'Plástico - soplado', 'assets/img/industries/hotel.png', 1),
+(4, 'Inyección', 'assets/img/industries/hotel.png', 1),
+(5, 'Maquiladoras', 'assets/img/industries/hotel.png', 1),
+(6, 'Cárnica', 'assets/img/industries/hotel.png', 2),
+(7, 'Láctea', 'assets/img/industries/hotel.png', 2),
+(8, 'Bebidas', 'assets/img/industries/hotel.png', 2),
+(9, 'Panificación', 'assets/img/industries/hotel.png', 2),
+(10, 'Frutas y verduras', 'assets/img/industries/hotel.png', 2),
+(11, 'Cervecera', 'assets/img/industries/hotel.png', 2),
+(12, 'Alimentos para mascotas', 'assets/img/industries/hotel.png', 2),
+(13, 'Refinerías', 'assets/img/industries/hotel.png', 3),
+(14, 'Pozos en tierra', 'assets/img/industries/hotel.png', 3),
+(15, 'Plataformas offshore ', 'assets/img/industries/hotel.png', 3),
+(16, 'Tanques de almacenamiento', 'assets/img/industries/hotel.png', 3),
+(17, 'Separadores', 'assets/img/industries/hotel.png', 3),
+(18, 'Hoteles', 'assets/img/industries/hotel.png', 4),
+(19, 'Restaurantes', 'assets/img/industries/hotel.png', 4),
+(20, 'Hospitales', 'assets/img/industries/hotel.png', 4),
+(21, 'Clínicas Dentales', 'assets/img/industries/hotel.png', 4),
+(22, 'Clínicas Veterinarias', 'assets/img/industries/hotel.png', 4),
+(23, 'Escuelas', 'assets/img/industries/hotel.png', 4),
+(24, 'Oficinas', 'assets/img/industries/hotel.png', 4);
 
 --
 -- Indexes for dumped tables
@@ -419,7 +419,7 @@ ALTER TABLE `industries`
 -- AUTO_INCREMENT for table `industries_products`
 --
 ALTER TABLE `industries_products`
-  MODIFY `id_industryProduct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_industryProduct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `products`
