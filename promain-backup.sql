@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Jan 07, 2023 at 07:08 PM
+-- Generation Time: Jan 16, 2023 at 09:57 PM
 -- Server version: 5.7.30
 -- PHP Version: 7.4.9
 
@@ -187,21 +187,23 @@ CREATE TABLE `products` (
   `productName` varchar(255) NOT NULL,
   `leyend` varchar(255) NOT NULL,
   `mainDescripton` text NOT NULL,
-  `url` varchar(255) NOT NULL
+  `url` varchar(255) NOT NULL,
+  `ordering` int(11) NOT NULL,
+  `status` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id_product`, `productName`, `leyend`, `mainDescripton`, `url`) VALUES
-(1, 'Enviro Care® LIQUIBAC', 'DIGESTOR BIOLÓGICO', 'Suspensión de microorganismos aerobios, facultativos y anaerobios no patógenos que producen enzimas que licuan y digieren grasas y aceites de origen animal o vegetal, proteínas, carbohidratos y residuos orgánicos', 'enviro-care-liquibac'),
-(3, 'Enviro Care Tough Job Cleaner', 'USO INDUSTRIAL EXCLUSIVO', 'Limpiador y desengrasante de uso rudo para suciedades difíciles mediante trapeador, mopa o máquina barredora automática. ', 'enviro-care-tough-job-cleaner'),
-(4, 'Enviro Care® Neutral Disinfectant', 'USO INDUSTRIAL EXCLUSIVO', 'Desinfectante de superficies duras tipo hospital, limpiador y desodorante. Mata el COVID-19 H1N1, el VIH (SIDA), el VRE, el CA-MRSA y más.', 'enviro-care-neutral-desinfectant'),
-(5, 'Enviro Care Low Foam All Purpose Cleaner', '', 'Limpiador multiuso uso de pH neutro y baja espuma. Ideal para remover suciedad de todo tipo de superficies.', 'enviro-care-low-foam-all-purpose-cleaner'),
-(6, 'DfE Sabre', '', 'Limpiador biocatalítico para trabajos pesados que disuelve grasas y aceites.', 'dfe-sabre'),
-(7, 'DfE B.L.O.C.', ' ', 'Líquido biológico rápido y efectivo neutralizador de malos olores.', 'dfe-bloc'),
-(8, 'Enviro Care Washroom Cleaner', '', 'Limpiador de baños, canceles, lavabos, loseta, mármol. No necesita enjuague.', 'enviro-care-washroom-cleaner');
+INSERT INTO `products` (`id_product`, `productName`, `leyend`, `mainDescripton`, `url`, `ordering`, `status`) VALUES
+(1, 'Enviro Care® LIQUIBAC', 'DIGESTOR BIOLÓGICO', 'Suspensión de microorganismos aerobios, facultativos y anaerobios no patógenos que producen enzimas que licuan y digieren grasas y aceites de origen animal o vegetal, proteínas, carbohidratos y residuos orgánicos', 'enviro-care-liquibac', 1, 1),
+(3, 'Enviro Care Tough Job Cleaner', 'USO INDUSTRIAL EXCLUSIVO', 'Limpiador y desengrasante de uso rudo para suciedades difíciles mediante trapeador, mopa o máquina barredora automática. ', 'enviro-care-tough-job-cleaner', 2, 1),
+(4, 'Enviro Care® Neutral Disinfectant', 'USO INDUSTRIAL EXCLUSIVO', 'Desinfectante de superficies duras tipo hospital, limpiador y desodorante. Mata el COVID-19 H1N1, el VIH (SIDA), el VRE, el CA-MRSA y más.', 'enviro-care-neutral-desinfectant', 3, 1),
+(5, 'Enviro Care Low Foam All Purpose Cleaner', '', 'Limpiador multiuso uso de pH neutro y baja espuma. Ideal para remover suciedad de todo tipo de superficies.', 'enviro-care-low-foam-all-purpose-cleaner', 4, 1),
+(6, 'DfE Sabre', '', 'Limpiador biocatalítico para trabajos pesados que disuelve grasas y aceites.', 'dfe-sabre', 5, 1),
+(7, 'DfE B.L.O.C.', ' ', 'Líquido biológico rápido y efectivo neutralizador de malos olores.', 'dfe-bloc', 6, 1),
+(8, 'Enviro Care Washroom Cleaner', '', 'Limpiador de baños, canceles, lavabos, loseta, mármol. No necesita enjuague.', 'enviro-care-washroom-cleaner', 7, 1);
 
 -- --------------------------------------------------------
 

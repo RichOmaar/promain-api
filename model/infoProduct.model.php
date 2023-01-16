@@ -76,4 +76,17 @@ class InfoProduct
 
         return ($stmt->rowCount() > 0) ? $stmt->fetchAll(PDO::FETCH_ASSOC) : false;
     }
+
+    public static function mdlGetTopProducts()
+    {
+        $db = new Connection();
+        $conn = $db->get_connection();
+        $sql = "SELECT id_product, productName, url FROM products WHERE status = 1 ORDER BY ordering ASC LIMIT 3";
+
+        $stmt = $conn->prepare($sql);
+
+        $stmt->execute();
+
+        return ($stmt->rowCount() > 0) ? $stmt->fetchAll(PDO::FETCH_ASSOC) : false;
+    }
 }
