@@ -8,8 +8,8 @@ class Mailing
     public static function mdlSendEmail($name, $email, $phone, $message)
     {
 
-        $mailTo = 'email.test@promainindustrial.com.mx';
-        $subject = 'Información PROMAIN';
+        $mailTo = 'contacto@promainindustrial.com.mx';
+        $subject = 'Contacto web | PROMAIN';
 
         $body =  'Nuevo correo de ' . $name . ' | Correo: ' . $email . ' | Teléfono: ' . $phone . ' | Mensaje: ' . $message . '.';
 

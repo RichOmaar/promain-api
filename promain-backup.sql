@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Jan 16, 2023 at 09:57 PM
+-- Generation Time: Feb 21, 2023 at 07:58 AM
 -- Server version: 5.7.30
 -- PHP Version: 7.4.9
 
@@ -98,13 +98,17 @@ CREATE TABLE `images` (
 --
 
 INSERT INTO `images` (`id_image`, `url`, `id_product`) VALUES
-(1, 'assets/img/products/ps-enviro-care-liqui.png', 1),
-(2, 'assets/img/products/ps-enviro-care.png', 3),
-(3, 'assets/img/products/ps-enviro-care-neutral.png', 4),
-(4, 'assets/img/products/ps-enviro-care-low.png', 5),
-(5, 'assets/img/products/ps-dfe-sabre.png', 6),
-(6, 'assets/img/products/ps-dfe-bloc.png', 7),
-(7, 'assets/img/products/ps-enviro-care-washroom-cleaner.png', 8);
+(1, 'assets/img/products/ps-enviro-care-tough-job.png', 9),
+(2, 'assets/img/products/ps-enviro-care-washroom.png', 10),
+(3, 'assets/img/products/ps-enviro-care-neutral-disinfectant.png', 11),
+(4, 'assets/img/products/ps-enviro-care-liqui-bac.png', 12),
+(5, 'assets/img/products/ps-enviro-care-low-foam.png', 13),
+(6, 'assets/img/products/ps-enviro-care-glass-cleaner.png', 14),
+(7, 'assets/img/products/ps-dfe-sabre.png', 15),
+(8, 'assets/img/products/ps-dfe-bloc.png', 16),
+(9, 'assets/img/products/ps-enviro-care-carpet.png', 18),
+(10, 'assets/img/products/ps-enviro-care-sudsation.png', 19),
+(11, 'assets/img/products/ps-enviro-care-cranberry-soap.png', 20);
 
 -- --------------------------------------------------------
 
@@ -174,7 +178,8 @@ INSERT INTO `industries_products` (`id_industryProduct`, `name`, `id_industry`) 
 (26, 'Tratamiento de aguas residuales: trampas de grasa, cárcamos, PTRA, drenajes', 4),
 (27, 'Aromatización de espacios grandes\r\n', 4),
 (28, 'Sistema de goteo', 4),
-(29, 'Tratamiento para alfombras y tapetes', 4);
+(29, 'Tratamiento para alfombras y tapetes', 4),
+(30, 'Acabados de pisos, ceras y\r\nremovedores de ceras.', 4);
 
 -- --------------------------------------------------------
 
@@ -197,13 +202,18 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id_product`, `productName`, `leyend`, `mainDescripton`, `url`, `ordering`, `status`) VALUES
-(1, 'Enviro Care® LIQUIBAC', 'DIGESTOR BIOLÓGICO', 'Suspensión de microorganismos aerobios, facultativos y anaerobios no patógenos que producen enzimas que licuan y digieren grasas y aceites de origen animal o vegetal, proteínas, carbohidratos y residuos orgánicos', 'enviro-care-liquibac', 1, 1),
-(3, 'Enviro Care Tough Job Cleaner', 'USO INDUSTRIAL EXCLUSIVO', 'Limpiador y desengrasante de uso rudo para suciedades difíciles mediante trapeador, mopa o máquina barredora automática. ', 'enviro-care-tough-job-cleaner', 2, 1),
-(4, 'Enviro Care® Neutral Disinfectant', 'USO INDUSTRIAL EXCLUSIVO', 'Desinfectante de superficies duras tipo hospital, limpiador y desodorante. Mata el COVID-19 H1N1, el VIH (SIDA), el VRE, el CA-MRSA y más.', 'enviro-care-neutral-desinfectant', 3, 1),
-(5, 'Enviro Care Low Foam All Purpose Cleaner', '', 'Limpiador multiuso uso de pH neutro y baja espuma. Ideal para remover suciedad de todo tipo de superficies.', 'enviro-care-low-foam-all-purpose-cleaner', 4, 1),
-(6, 'DfE Sabre', '', 'Limpiador biocatalítico para trabajos pesados que disuelve grasas y aceites.', 'dfe-sabre', 5, 1),
-(7, 'DfE B.L.O.C.', ' ', 'Líquido biológico rápido y efectivo neutralizador de malos olores.', 'dfe-bloc', 6, 1),
-(8, 'Enviro Care Washroom Cleaner', '', 'Limpiador de baños, canceles, lavabos, loseta, mármol. No necesita enjuague.', 'enviro-care-washroom-cleaner', 7, 1);
+(9, 'Enviro Care® Tough Job', '', 'Limpiador y desengrasante de uso rudo para suciedades difíciles mediante trapeador, mopa o máquina barredora automática.', 'enviro-care-tough-job', 1, 1),
+(10, 'Enviro Care® Washroom', '', 'Limpiador de baños, canceles, lavabos, loseta, mármol. No necesita enjuague.', 'enviro-care-washroom', 2, 1),
+(11, 'Enviro Care® Neutral Disinfectant', '', 'Desinfectante de superficies duras tipo hospital, limpiador y desodorante. Mata el COVID-19 H1N1, el VIH (SIDA), el VRE, el CA-MRSA y más.', 'enviro-care-neutral-disinfectant ', 3, 1),
+(12, 'Enviro Care® Liqui Bac', '', 'Suspensión de microorganismos aerobios, facultativos y anaerobios no patógenos que producen enzimas que licuan y digieren grasas y aceites de origen animal o vegetal, proteínas, carbohidratos y residuos orgánicos.', 'enviro-care-liqui-bac', 4, 1),
+(13, 'Enviro Care® Low Foam', '', 'Limpiador multiuso uso de pH neutro y baja espuma. Ideal para remover suciedad de todo tipo de superficies.', 'enviro-care-low-foam', 5, 1),
+(14, 'Enviro Care® Glass Cleaner', '', '', 'enviro-care-glass-cleaner', 6, 1),
+(15, 'DfE Sabre', '', 'Limpiador biocatalítico para trabajos pesados que disuelve grasas y aceites.', 'dfe-sabre', 7, 1),
+(16, 'DfE B.L.O.C.', '', 'Líquido biológico rápido y efectivo neutralizador de malos olores.', 'dfe-bloc', 8, 1),
+(17, 'Enviro Care® Armor', '', '', 'enviro-care-armor', 9, 1),
+(18, 'Enviro Care® Carpet Upholstery', '', '', 'enviro-care-carpet-upholstery', 10, 1),
+(19, 'Enviro Care® Sudsation', '', '', 'enviro-care-sudsation', 11, 1),
+(20, 'Enviro Care® Cranberry Soap', '', '', 'enviro-care-cranberry-soap', 12, 1);
 
 -- --------------------------------------------------------
 
@@ -222,20 +232,40 @@ CREATE TABLE `products_bullets` (
 --
 
 INSERT INTO `products_bullets` (`id_bullet`, `id_product`, `bulletText`) VALUES
-(1, 1, 'Controla índices de explosividad'),
-(2, 1, 'Remueve toda la suciedad orgánica acumulada'),
-(3, 1, 'Controla el problema de mal olor'),
-(4, 3, 'Desinfectante aprobado por la guía de patógenos virales emergentes de la EPA'),
-(5, 3, 'Limpia, desinfecta y elimina mal olor en un solo paso'),
-(6, 4, 'Remueve malos olores'),
-(7, 6, 'Desengrasante enzimático de potencia industrial'),
-(8, 6, 'Disuelve las grasas y aceites'),
-(9, 6, 'Cumple con la norma ASTM D4488 en cuanto a resistencia de resbalones'),
-(10, 7, 'Degrada y elimina la causa del mal olor'),
-(11, 7, 'A través de actividad vio-enzemática digiere suciedad orgánica'),
-(12, 7, 'Biodegradable'),
-(13, 8, 'No tóxico'),
-(14, 8, 'Biodegradable');
+(1, 9, 'Desengrasante ecológico.'),
+(2, 9, 'Remueve la grasa orgánica vegetal y animal así como derivados del petróleo.'),
+(3, 10, 'Potente sarricida.'),
+(4, 10, 'Remueve sarro, óxido, moho, maquillaje, aceites corporales, jabón, etc.'),
+(5, 11, 'Desinfectante con registro ante la EPA.'),
+(6, 11, 'EPA Reg. No 47371-129-527'),
+(7, 11, 'EPA Reg. No 47371-131-52'),
+(8, 11, 'Limpia, desinfecta y quita el mal olor en un solo paso.'),
+(9, 12, 'Suspensión de microorganismos no patógenos que licuan y digieren grasas, carbohidratos y proteínas de origen animal y vegetal.'),
+(10, 12, 'Ayuda a reducir los parámetros de dqo así como de grasas y aceites en aguas residuales.'),
+(11, 12, 'Evita taponamientos y mal olor.'),
+(12, 12, 'Controla indices de toxicidad.'),
+(13, 13, 'Altamente eficaz para todas las tareas de limpieza general.'),
+(14, 13, 'Especialmente eficaz para limpiar pisos altamente pulidos.'),
+(15, 13, 'Desprende la suciedad de cualquier superficie lavable rápida y fácilmente y se seca sin dejar capa residual.'),
+(16, 14, 'Deja las ventanas, espejos y otras superficies limpias, brillantes y sin marcas ni depósitos de agua dura.'),
+(17, 14, 'Muy eficaz. Recomendado para limpiar cristales, espejos, porcelana, esmalte, acero inoxidable, cromo, formica, plástico y losetas de cerámica y otras superficies brillantes.'),
+(18, 15, 'Desengrasante ecológico para pisos.'),
+(19, 15, 'Remueve la grasa de origen animal y vegetal así como derivados del petróleo.'),
+(20, 15, 'Ideal para uso industrial.'),
+(21, 16, 'Rápido y efec8vo líquido neutralizador de malos olores.'),
+(22, 16, 'Degrada y elimina las causas del mal olor.'),
+(23, 16, 'No con8ene perfumes ni agentes enmascaradores.'),
+(24, 18, 'Limpiador de alfombras.'),
+(25, 18, 'Limpia aviva y deodoriza alfombras, tapicerías y otras telas que no se destiñen.'),
+(26, 18, 'Usa microorganismos no patógenos para digerir las sustancias que causan los malos olores.'),
+(27, 19, 'Jabón para trastes.'),
+(28, 19, 'Alta espuma.'),
+(29, 19, 'No deja capa residual.'),
+(30, 20, 'Jabón para manos.'),
+(31, 20, 'Evita problemas de sequedad y grietas'),
+(32, 20, 'Agradable aroma que refresca naturalmente la piel.'),
+(33, 20, 'Libre de fosfatos.'),
+(34, 20, 'Fragancia frutal.');
 
 -- --------------------------------------------------------
 
@@ -253,23 +283,29 @@ CREATE TABLE `product_certification` (
 --
 
 INSERT INTO `product_certification` (`id_product`, `id_certification`) VALUES
-(1, 3),
-(1, 1),
-(3, 2),
-(3, 1),
-(3, 3),
-(4, 3),
-(4, 1),
-(5, 2),
-(5, 1),
-(5, 3),
-(6, 1),
-(6, 3),
-(7, 1),
-(7, 3),
-(8, 2),
-(8, 1),
-(8, 3);
+(9, 3),
+(9, 1),
+(10, 1),
+(10, 3),
+(11, 3),
+(11, 1),
+(12, 3),
+(12, 1),
+(13, 2),
+(13, 1),
+(13, 3),
+(14, 1),
+(14, 2),
+(14, 3),
+(15, 1),
+(15, 3),
+(16, 1),
+(16, 3),
+(18, 1),
+(18, 3),
+(19, 3),
+(20, 1),
+(20, 3);
 
 -- --------------------------------------------------------
 
@@ -289,29 +325,29 @@ CREATE TABLE `subindustries` (
 --
 
 INSERT INTO `subindustries` (`id_subindustry`, `name`, `image`, `id_industry`) VALUES
-(1, 'Metalmecánica', 'assets/img/industries/hotel.png', 1),
-(2, 'Automotriz', 'assets/img/industries/hotel.png', 1),
-(3, 'Plástico - soplado', 'assets/img/industries/hotel.png', 1),
+(1, 'Metalmecánica', 'assets/img/industries/metal-mecanica.jpg', 1),
+(2, 'Automotriz', 'assets/img/industries/automotriz.jpg', 1),
+(3, 'Plástico - soplado', 'assets/img/industries/soplado.jpg', 1),
 (4, 'Inyección', 'assets/img/industries/hotel.png', 1),
-(5, 'Maquiladoras', 'assets/img/industries/hotel.png', 1),
-(6, 'Cárnica', 'assets/img/industries/hotel.png', 2),
-(7, 'Láctea', 'assets/img/industries/hotel.png', 2),
-(8, 'Bebidas', 'assets/img/industries/hotel.png', 2),
-(9, 'Panificación', 'assets/img/industries/hotel.png', 2),
-(10, 'Frutas y verduras', 'assets/img/industries/hotel.png', 2),
-(11, 'Cervecera', 'assets/img/industries/hotel.png', 2),
-(12, 'Alimentos para mascotas', 'assets/img/industries/hotel.png', 2),
-(13, 'Refinerías', 'assets/img/industries/hotel.png', 3),
-(14, 'Pozos en tierra', 'assets/img/industries/hotel.png', 3),
-(15, 'Plataformas offshore ', 'assets/img/industries/hotel.png', 3),
-(16, 'Tanques de almacenamiento', 'assets/img/industries/hotel.png', 3),
+(5, 'Maquiladoras', 'assets/img/industries/maquiladora.jpg', 1),
+(6, 'Cárnica', 'assets/img/industries/carnica.jpg', 2),
+(7, 'Láctea', 'assets/img/industries/lactea-2.jpg', 2),
+(8, 'Bebidas', 'assets/img/industries/bebidas.jpg', 2),
+(9, 'Panificación', 'assets/img/industries/panificadora.jpg', 2),
+(10, 'Frutas y verduras', 'assets/img/industries/frutas-verduras.jpg', 2),
+(11, 'Cervecera', 'assets/img/industries/cervecera.jpg', 2),
+(12, 'Alimentos para mascotas', 'assets/img/industries/comida-mascotas.jpg', 2),
+(13, 'Refinerías', 'assets/img/industries/refineria-2.jpg', 3),
+(14, 'Pozos en tierra', 'assets/img/industries/pozo-tierra-2.jpg', 3),
+(15, 'Plataformas offshore ', 'assets/img/industries/off-shore.jpg', 3),
+(16, 'Tanques de almacenamiento', 'assets/img/industries/tanque-almacenamiento.jpg', 3),
 (17, 'Separadores', 'assets/img/industries/hotel.png', 3),
-(18, 'Hoteles', 'assets/img/industries/hotel.png', 4),
-(19, 'Restaurantes', 'assets/img/industries/hotel.png', 4),
-(20, 'Hospitales', 'assets/img/industries/hotel.png', 4),
-(21, 'Clínicas Dentales', 'assets/img/industries/hotel.png', 4),
-(22, 'Clínicas Veterinarias', 'assets/img/industries/hotel.png', 4),
-(23, 'Escuelas', 'assets/img/industries/hotel.png', 4),
+(18, 'Hoteles', 'assets/img/industries/hotel-3.jpg', 4),
+(19, 'Restaurantes', 'assets/img/industries/restaurante-2.jpg', 4),
+(20, 'Hospitales', 'assets/img/industries/hospital-2.jpg', 4),
+(21, 'Clínicas Dentales', 'assets/img/industries/clinica-dental-2.jpg', 4),
+(22, 'Clínicas Veterinarias', 'assets/img/industries/clinica-veterinaria-3.jpg', 4),
+(23, 'Escuelas', 'assets/img/industries/escuela-2.jpg', 4),
 (24, 'Oficinas', 'assets/img/industries/hotel.png', 4);
 
 --
@@ -409,7 +445,7 @@ ALTER TABLE `contact_form`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id_image` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_image` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `industries`
@@ -421,19 +457,19 @@ ALTER TABLE `industries`
 -- AUTO_INCREMENT for table `industries_products`
 --
 ALTER TABLE `industries_products`
-  MODIFY `id_industryProduct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_industryProduct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `products_bullets`
 --
 ALTER TABLE `products_bullets`
-  MODIFY `id_bullet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_bullet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `subindustries`
