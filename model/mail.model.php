@@ -9,7 +9,7 @@ class Mailing
     {
 
         // $mailTo = 'contacto@promainindustrial.com.mx';
-        $mailTo = 'publicidad1z2x@gmail.com';
+        $mailTo = 'contacto@promainindustrial.com.mx';
         $subject = 'Contacto web | PROMAIN';
 
         // $body =  'Nuevo correo de ' . $name . ' | Correo: ' . $email . ' | Teléfono: ' . $phone . ' | Mensaje: ' . $message . '.';
