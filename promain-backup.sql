@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Feb 21, 2023 at 07:58 AM
+-- Generation Time: Mar 03, 2023 at 10:13 PM
 -- Server version: 5.7.30
 -- PHP Version: 7.4.9
 
@@ -33,7 +33,8 @@ INSERT INTO `certifications` (`id_certification`, `name`) VALUES
 (1, 'Ecologo'),
 (2, 'GreenSeal'),
 (3, 'Kosher'),
-(4, 'Recyclable');
+(4, 'Recyclable'),
+(5, 'OMRI');
 
 -- --------------------------------------------------------
 
@@ -202,18 +203,18 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id_product`, `productName`, `leyend`, `mainDescripton`, `url`, `ordering`, `status`) VALUES
-(9, 'Enviro Care® Tough Job', '', 'Limpiador y desengrasante de uso rudo para suciedades difíciles mediante trapeador, mopa o máquina barredora automática.', 'enviro-care-tough-job', 1, 1),
-(10, 'Enviro Care® Washroom', '', 'Limpiador de baños, canceles, lavabos, loseta, mármol. No necesita enjuague.', 'enviro-care-washroom', 2, 1),
-(11, 'Enviro Care® Neutral Disinfectant', '', 'Desinfectante de superficies duras tipo hospital, limpiador y desodorante. Mata el COVID-19 H1N1, el VIH (SIDA), el VRE, el CA-MRSA y más.', 'enviro-care-neutral-disinfectant ', 3, 1),
-(12, 'Enviro Care® Liqui Bac', '', 'Suspensión de microorganismos aerobios, facultativos y anaerobios no patógenos que producen enzimas que licuan y digieren grasas y aceites de origen animal o vegetal, proteínas, carbohidratos y residuos orgánicos.', 'enviro-care-liqui-bac', 4, 1),
-(13, 'Enviro Care® Low Foam', '', 'Limpiador multiuso uso de pH neutro y baja espuma. Ideal para remover suciedad de todo tipo de superficies.', 'enviro-care-low-foam', 5, 1),
-(14, 'Enviro Care® Glass Cleaner', '', '', 'enviro-care-glass-cleaner', 6, 1),
-(15, 'DfE Sabre', '', 'Limpiador biocatalítico para trabajos pesados que disuelve grasas y aceites.', 'dfe-sabre', 7, 1),
-(16, 'DfE B.L.O.C.', '', 'Líquido biológico rápido y efectivo neutralizador de malos olores.', 'dfe-bloc', 8, 1),
-(17, 'Enviro Care® Armor', '', '', 'enviro-care-armor', 9, 1),
-(18, 'Enviro Care® Carpet Upholstery', '', '', 'enviro-care-carpet-upholstery', 10, 1),
-(19, 'Enviro Care® Sudsation', '', '', 'enviro-care-sudsation', 11, 1),
-(20, 'Enviro Care® Cranberry Soap', '', '', 'enviro-care-cranberry-soap', 12, 1);
+(9, 'Enviro Care® Tough Job', 'Desengrasante', 'Limpiador y desengrasante de uso rudo para suciedades difíciles mediante trapeador, mopa o máquina barredora automática.', 'enviro-care-tough-job', 1, 1),
+(10, 'Enviro Care® Washroom', 'Limpiador de baños', 'Limpiador de baños, canceles, lavabos, loseta, mármol. No necesita enjuague.', 'enviro-care-washroom', 2, 1),
+(11, 'Enviro Care® Neutral Disinfectant', 'Desinfectante', 'Desinfectante de superficies duras tipo hospital, limpiador y desodorante. Mata el COVID-19 H1N1, el VIH (SIDA), el VRE, el CA-MRSA y más.', 'enviro-care-neutral-disinfectant ', 3, 1),
+(12, 'Enviro Care® Liqui Bac', 'Tratamiento de aguas residuales', 'Suspensión de microorganismos aerobios, facultativos y anaerobios no patógenos que producen enzimas que licuan y digieren grasas y aceites de origen animal o vegetal, proteínas, carbohidratos y residuos orgánicos.', 'enviro-care-liqui-bac', 4, 1),
+(13, 'Enviro Care® Low Foam', 'Limpiador  multiusos', 'Limpiador multiuso uso de pH neutro y baja espuma. Ideal para remover suciedad de todo tipo de superficies.', 'enviro-care-low-foam', 5, 1),
+(14, 'Enviro Care® Glass Cleaner', 'Limpiador de vidrios', '', 'enviro-care-glass-cleaner', 6, 1),
+(15, 'DfE Sabre', 'Desengrasante de pisos', 'Limpiador biocatalítico para trabajos pesados que disuelve grasas y aceites.', 'dfe-sabre', 7, 1),
+(16, 'DfE B.L.O.C.', 'Control de olores', 'Líquido biológico rápido y efectivo neutralizador de malos olores.', 'dfe-bloc', 8, 1),
+(17, 'Enviro Care® Armor', 'Terminado de pisos', '', 'enviro-care-armor', 9, 1),
+(18, 'Enviro Care® Carpet Upholstery', 'Limpieza de alfombras', '', 'enviro-care-carpet-upholstery', 10, 1),
+(19, 'Enviro Care® Sudsation', 'Jabón para trastes', '', 'enviro-care-sudsation', 11, 1),
+(20, 'Enviro Care® Cranberry Soap', 'Jabón para manos', '', 'enviro-care-cranberry-soap', 12, 1);
 
 -- --------------------------------------------------------
 
@@ -283,29 +284,33 @@ CREATE TABLE `product_certification` (
 --
 
 INSERT INTO `product_certification` (`id_product`, `id_certification`) VALUES
+(9, 2),
 (9, 3),
-(9, 1),
-(10, 1),
+(10, 2),
 (10, 3),
-(11, 3),
-(11, 1),
-(12, 3),
+(12, 2),
 (12, 1),
+(12, 3),
 (13, 2),
-(13, 1),
 (13, 3),
-(14, 1),
 (14, 2),
 (14, 3),
+(15, 2),
 (15, 1),
 (15, 3),
+(16, 2),
 (16, 1),
 (16, 3),
-(18, 1),
+(17, 2),
+(17, 3),
+(18, 2),
 (18, 3),
+(20, 2),
+(20, 3),
+(20, 5),
 (19, 3),
-(20, 1),
-(20, 3);
+(19, 2),
+(19, 5);
 
 -- --------------------------------------------------------
 
@@ -328,7 +333,7 @@ INSERT INTO `subindustries` (`id_subindustry`, `name`, `image`, `id_industry`) V
 (1, 'Metalmecánica', 'assets/img/industries/metal-mecanica.jpg', 1),
 (2, 'Automotriz', 'assets/img/industries/automotriz.jpg', 1),
 (3, 'Plástico - soplado', 'assets/img/industries/soplado.jpg', 1),
-(4, 'Inyección', 'assets/img/industries/hotel.png', 1),
+(4, 'Inyección', 'assets/img/industries/inyeccion.png', 1),
 (5, 'Maquiladoras', 'assets/img/industries/maquiladora.jpg', 1),
 (6, 'Cárnica', 'assets/img/industries/carnica.jpg', 2),
 (7, 'Láctea', 'assets/img/industries/lactea-2.jpg', 2),
@@ -337,18 +342,18 @@ INSERT INTO `subindustries` (`id_subindustry`, `name`, `image`, `id_industry`) V
 (10, 'Frutas y verduras', 'assets/img/industries/frutas-verduras.jpg', 2),
 (11, 'Cervecera', 'assets/img/industries/cervecera.jpg', 2),
 (12, 'Alimentos para mascotas', 'assets/img/industries/comida-mascotas.jpg', 2),
-(13, 'Refinerías', 'assets/img/industries/refineria-2.jpg', 3),
+(13, 'Refinerías', 'assets/img/industries/refineria.jpg', 3),
 (14, 'Pozos en tierra', 'assets/img/industries/pozo-tierra-2.jpg', 3),
 (15, 'Plataformas offshore ', 'assets/img/industries/off-shore.jpg', 3),
 (16, 'Tanques de almacenamiento', 'assets/img/industries/tanque-almacenamiento.jpg', 3),
-(17, 'Separadores', 'assets/img/industries/hotel.png', 3),
+(17, 'Separadores', 'assets/img/industries/separadores.png', 3),
 (18, 'Hoteles', 'assets/img/industries/hotel-3.jpg', 4),
 (19, 'Restaurantes', 'assets/img/industries/restaurante-2.jpg', 4),
 (20, 'Hospitales', 'assets/img/industries/hospital-2.jpg', 4),
 (21, 'Clínicas Dentales', 'assets/img/industries/clinica-dental-2.jpg', 4),
 (22, 'Clínicas Veterinarias', 'assets/img/industries/clinica-veterinaria-3.jpg', 4),
 (23, 'Escuelas', 'assets/img/industries/escuela-2.jpg', 4),
-(24, 'Oficinas', 'assets/img/industries/hotel.png', 4);
+(24, 'Oficinas', 'assets/img/industries/oficinas.png', 4);
 
 --
 -- Indexes for dumped tables
@@ -427,7 +432,7 @@ ALTER TABLE `subindustries`
 -- AUTO_INCREMENT for table `certifications`
 --
 ALTER TABLE `certifications`
-  MODIFY `id_certification` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_certification` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `clients`
