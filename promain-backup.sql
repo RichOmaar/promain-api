@@ -2,22 +2,30 @@
 -- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Mar 03, 2023 at 10:13 PM
--- Server version: 5.7.30
--- PHP Version: 7.4.9
+-- Servidor: localhost
+-- Tiempo de generación: 26-04-2023 a las 16:28:35
+-- Versión del servidor: 5.6.46-log
+-- Versión de PHP: 5.6.40
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
 --
--- Database: `promain`
+-- Base de datos: `ay000543_proweb`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `certifications`
+-- Estructura de tabla para la tabla `certifications`
 --
 
 CREATE TABLE `certifications` (
@@ -26,7 +34,7 @@ CREATE TABLE `certifications` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `certifications`
+-- Volcado de datos para la tabla `certifications`
 --
 
 INSERT INTO `certifications` (`id_certification`, `name`) VALUES
@@ -39,7 +47,7 @@ INSERT INTO `certifications` (`id_certification`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `clients`
+-- Estructura de tabla para la tabla `clients`
 --
 
 CREATE TABLE `clients` (
@@ -50,7 +58,7 @@ CREATE TABLE `clients` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `clients`
+-- Volcado de datos para la tabla `clients`
 --
 
 INSERT INTO `clients` (`id_client`, `name`, `description`, `logo_url`) VALUES
@@ -61,7 +69,7 @@ INSERT INTO `clients` (`id_client`, `name`, `description`, `logo_url`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact_form`
+-- Estructura de tabla para la tabla `contact_form`
 --
 
 CREATE TABLE `contact_form` (
@@ -75,17 +83,18 @@ CREATE TABLE `contact_form` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `contact_form`
+-- Volcado de datos para la tabla `contact_form`
 --
 
 INSERT INTO `contact_form` (`id_contactForm`, `name`, `phone`, `email`, `message`, `seen`, `date`) VALUES
 (1, 'Juan Omar 1', '5534080960', 'juanomcam@gmail.com', 'Hola mundo', 0, '2022-09-16 21:38:46'),
-(2, 'Juan Omar 1', '5534080960', 'juanomcam@gmail.com', 'Hola mundo', 0, '2022-09-16 23:15:32');
+(2, 'Juan Omar 1', '5534080960', 'juanomcam@gmail.com', 'Hola mundo', 0, '2022-09-16 23:15:32'),
+(3, 'OMAR PRUEBA', '5534080960', 'juanomcam@gmail.com', 'Prueba', 0, '2023-03-13 19:31:02');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `images`
+-- Estructura de tabla para la tabla `images`
 --
 
 CREATE TABLE `images` (
@@ -95,7 +104,7 @@ CREATE TABLE `images` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `images`
+-- Volcado de datos para la tabla `images`
 --
 
 INSERT INTO `images` (`id_image`, `url`, `id_product`) VALUES
@@ -114,7 +123,7 @@ INSERT INTO `images` (`id_image`, `url`, `id_product`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `industries`
+-- Estructura de tabla para la tabla `industries`
 --
 
 CREATE TABLE `industries` (
@@ -125,7 +134,7 @@ CREATE TABLE `industries` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `industries`
+-- Volcado de datos para la tabla `industries`
 --
 
 INSERT INTO `industries` (`id_industry`, `name`, `name_url`, `description`) VALUES
@@ -137,7 +146,7 @@ INSERT INTO `industries` (`id_industry`, `name`, `name_url`, `description`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `industries_products`
+-- Estructura de tabla para la tabla `industries_products`
 --
 
 CREATE TABLE `industries_products` (
@@ -147,7 +156,7 @@ CREATE TABLE `industries_products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `industries_products`
+-- Volcado de datos para la tabla `industries_products`
 --
 
 INSERT INTO `industries_products` (`id_industryProduct`, `name`, `id_industry`) VALUES
@@ -185,7 +194,7 @@ INSERT INTO `industries_products` (`id_industryProduct`, `name`, `id_industry`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Estructura de tabla para la tabla `products`
 --
 
 CREATE TABLE `products` (
@@ -199,7 +208,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `products`
+-- Volcado de datos para la tabla `products`
 --
 
 INSERT INTO `products` (`id_product`, `productName`, `leyend`, `mainDescripton`, `url`, `ordering`, `status`) VALUES
@@ -219,7 +228,7 @@ INSERT INTO `products` (`id_product`, `productName`, `leyend`, `mainDescripton`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products_bullets`
+-- Estructura de tabla para la tabla `products_bullets`
 --
 
 CREATE TABLE `products_bullets` (
@@ -229,7 +238,7 @@ CREATE TABLE `products_bullets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `products_bullets`
+-- Volcado de datos para la tabla `products_bullets`
 --
 
 INSERT INTO `products_bullets` (`id_bullet`, `id_product`, `bulletText`) VALUES
@@ -271,7 +280,7 @@ INSERT INTO `products_bullets` (`id_bullet`, `id_product`, `bulletText`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_certification`
+-- Estructura de tabla para la tabla `product_certification`
 --
 
 CREATE TABLE `product_certification` (
@@ -280,7 +289,7 @@ CREATE TABLE `product_certification` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `product_certification`
+-- Volcado de datos para la tabla `product_certification`
 --
 
 INSERT INTO `product_certification` (`id_product`, `id_certification`) VALUES
@@ -315,7 +324,7 @@ INSERT INTO `product_certification` (`id_product`, `id_certification`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `subindustries`
+-- Estructura de tabla para la tabla `subindustries`
 --
 
 CREATE TABLE `subindustries` (
@@ -326,7 +335,7 @@ CREATE TABLE `subindustries` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `subindustries`
+-- Volcado de datos para la tabla `subindustries`
 --
 
 INSERT INTO `subindustries` (`id_subindustry`, `name`, `image`, `id_industry`) VALUES
@@ -356,163 +365,168 @@ INSERT INTO `subindustries` (`id_subindustry`, `name`, `image`, `id_industry`) V
 (24, 'Oficinas', 'assets/img/industries/oficinas.png', 4);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `certifications`
+-- Indices de la tabla `certifications`
 --
 ALTER TABLE `certifications`
   ADD PRIMARY KEY (`id_certification`);
 
 --
--- Indexes for table `clients`
+-- Indices de la tabla `clients`
 --
 ALTER TABLE `clients`
   ADD PRIMARY KEY (`id_client`);
 
 --
--- Indexes for table `contact_form`
+-- Indices de la tabla `contact_form`
 --
 ALTER TABLE `contact_form`
   ADD PRIMARY KEY (`id_contactForm`);
 
 --
--- Indexes for table `images`
+-- Indices de la tabla `images`
 --
 ALTER TABLE `images`
   ADD PRIMARY KEY (`id_image`),
   ADD KEY `id_product` (`id_product`);
 
 --
--- Indexes for table `industries`
+-- Indices de la tabla `industries`
 --
 ALTER TABLE `industries`
   ADD PRIMARY KEY (`id_industry`);
 
 --
--- Indexes for table `industries_products`
+-- Indices de la tabla `industries_products`
 --
 ALTER TABLE `industries_products`
   ADD PRIMARY KEY (`id_industryProduct`),
   ADD KEY `id_industry` (`id_industry`);
 
 --
--- Indexes for table `products`
+-- Indices de la tabla `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id_product`);
 
 --
--- Indexes for table `products_bullets`
+-- Indices de la tabla `products_bullets`
 --
 ALTER TABLE `products_bullets`
   ADD PRIMARY KEY (`id_bullet`),
   ADD KEY `id_product` (`id_product`);
 
 --
--- Indexes for table `product_certification`
+-- Indices de la tabla `product_certification`
 --
 ALTER TABLE `product_certification`
   ADD KEY `id_product` (`id_product`),
   ADD KEY `id_certification` (`id_certification`);
 
 --
--- Indexes for table `subindustries`
+-- Indices de la tabla `subindustries`
 --
 ALTER TABLE `subindustries`
   ADD PRIMARY KEY (`id_subindustry`),
   ADD KEY `id_industry` (`id_industry`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `certifications`
+-- AUTO_INCREMENT de la tabla `certifications`
 --
 ALTER TABLE `certifications`
   MODIFY `id_certification` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `clients`
+-- AUTO_INCREMENT de la tabla `clients`
 --
 ALTER TABLE `clients`
   MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `contact_form`
+-- AUTO_INCREMENT de la tabla `contact_form`
 --
 ALTER TABLE `contact_form`
-  MODIFY `id_contactForm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_contactForm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `images`
+-- AUTO_INCREMENT de la tabla `images`
 --
 ALTER TABLE `images`
   MODIFY `id_image` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `industries`
+-- AUTO_INCREMENT de la tabla `industries`
 --
 ALTER TABLE `industries`
   MODIFY `id_industry` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `industries_products`
+-- AUTO_INCREMENT de la tabla `industries_products`
 --
 ALTER TABLE `industries_products`
   MODIFY `id_industryProduct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
   MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `products_bullets`
+-- AUTO_INCREMENT de la tabla `products_bullets`
 --
 ALTER TABLE `products_bullets`
   MODIFY `id_bullet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
--- AUTO_INCREMENT for table `subindustries`
+-- AUTO_INCREMENT de la tabla `subindustries`
 --
 ALTER TABLE `subindustries`
   MODIFY `id_subindustry` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `images`
+-- Filtros para la tabla `images`
 --
 ALTER TABLE `images`
   ADD CONSTRAINT `images_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `products` (`id_product`);
 
 --
--- Constraints for table `industries_products`
+-- Filtros para la tabla `industries_products`
 --
 ALTER TABLE `industries_products`
   ADD CONSTRAINT `industries_products_ibfk_1` FOREIGN KEY (`id_industry`) REFERENCES `industries` (`id_industry`);
 
 --
--- Constraints for table `products_bullets`
+-- Filtros para la tabla `products_bullets`
 --
 ALTER TABLE `products_bullets`
   ADD CONSTRAINT `products_bullets_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `products` (`id_product`);
 
 --
--- Constraints for table `product_certification`
+-- Filtros para la tabla `product_certification`
 --
 ALTER TABLE `product_certification`
   ADD CONSTRAINT `product_certification_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `products` (`id_product`),
   ADD CONSTRAINT `product_certification_ibfk_2` FOREIGN KEY (`id_certification`) REFERENCES `certifications` (`id_certification`);
 
 --
--- Constraints for table `subindustries`
+-- Filtros para la tabla `subindustries`
 --
 ALTER TABLE `subindustries`
   ADD CONSTRAINT `subindustries_ibfk_1` FOREIGN KEY (`id_industry`) REFERENCES `industries` (`id_industry`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

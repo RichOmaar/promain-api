@@ -16,11 +16,11 @@ class Connection {
                 )
             );
         return ($connection);
-        // $user = "kinesiuz_cursodontic";
-        // $pass = "PINTOhome.1";
-        // $host = "localhost";
-        // // $db = "ay000543_promain";
-        // $db = "kinesiuz_pro";
+        
+        // $user = "legendar_promain";
+        // $pass = "Juanomar123";
+        // $host = "127.0.0.1";
+        // $db = "legendar_promain";
         // $connection = new PDO(
         //     "mysql:host={$host}; 
         //     dbname={$db};", 
