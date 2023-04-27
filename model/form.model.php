@@ -20,4 +20,16 @@ class Form
 
         return ($stmt);
     }
+
+    public static function mdlGetAll() {
+        $db = new Connection();
+        $conn = $db->get_connection();
+        $sql = "SELECT * FROM contact_form ORDER BY date DESC";
+
+        $stmt = $conn->prepare($sql);
+
+        $stmt->execute();
+
+        return ($stmt->rowCount() > 0) ? $stmt->fetchAll(PDO::FETCH_ASSOC) : false;
+    }
 }
